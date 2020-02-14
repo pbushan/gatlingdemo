@@ -53,6 +53,13 @@
 			<version>2.9.2</version>
 		</dependency>
 		<!--*** End Swagger Dependencies -->
+		<!-- Gatling dependencies -->
+		<dependency>
+			<groupId>io.gatling.highcharts</groupId>
+			<artifactId>gatling-charts-highcharts</artifactId>
+			<version>3.1.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -60,6 +67,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>io.gatling</groupId>
+				<artifactId>gatling-maven-plugin</artifactId>
+				<version>3.0.5</version>
+				<configuration>
+					<simulationsFolder>${project.basedir}/src/test/java/</simulationsFolder>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
