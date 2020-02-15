@@ -18,15 +18,16 @@ class ProductSimulation extends Simulation {
   val getProduct: PopulationBuilder =
   scenario("get product")
     .exec(
-      Product.getProduct
+      Product.getProduct,
+      Product.getdelayed
     )
     /*
      * The number and arrival rate of users for the scenario is configured.
      */
     .inject(
-      atOnceUsers(1),
+      atOnceUsers(10),
       nothingFor(2 seconds),
-      rampUsers(1) during (1 seconds)
+      rampUsers(10) during (600 seconds)
     )
 
   /*
