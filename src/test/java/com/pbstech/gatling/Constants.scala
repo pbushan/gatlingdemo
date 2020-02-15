@@ -10,8 +10,10 @@ object Constants {
     "Content-Type" -> "application/json",
     "User-Agent" -> "Java/1.8.0_152")
 
+  val baseURL = Option(TestProperties.getProperties().getProperty("host.url")) getOrElse """http://localhost:8080"""
+
   val httpProtocol: HttpProtocolBuilder = http
-    .baseUrl("http://pbstech-ubuntu.eastus.cloudapp.azure.com:8080")
+    .baseUrl(baseURL)
     .inferHtmlResources(BlackList(""".*\.js""", """.*\.css""", """.*\.gif""", """.*\.jpeg""", """.*\.jpg""", """.*\.ico""", """.*\.woff""", """.*\.woff2""", """.*\.(t|o)tf""", """.*\.png""", """.*detectportal\.firefox\.com.*"""), WhiteList())
     .acceptHeader("application/json; */*")
     .headers(headers)

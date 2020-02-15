@@ -19,7 +19,8 @@ class ProductSimulation extends Simulation {
   scenario("get product")
     .exec(
       Product.getProduct,
-      Product.getdelayed
+      Product.getdelayed,
+      Product.productdelay
     )
     /*
      * The number and arrival rate of users for the scenario is configured.
