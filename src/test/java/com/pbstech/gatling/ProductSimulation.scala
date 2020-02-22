@@ -28,7 +28,7 @@ class ProductSimulation extends Simulation {
     .inject(
       atOnceUsers(10),
       nothingFor(2 seconds),
-      rampUsers(10) during (600 seconds)
+      rampUsers(10) during (30 seconds)
     )
 
   /*
